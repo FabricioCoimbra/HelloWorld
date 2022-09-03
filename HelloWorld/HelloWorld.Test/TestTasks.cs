@@ -11,8 +11,10 @@ namespace HelloWorld.Test
             var handler = new UnhandledError();
 
             //act
-            Assert.Throws<Exception>(() => handler.DivideByZero());
+            var action = () => handler.DivideByZero();
+
             //assert
+            Assert.Throws<DivideByZeroException>(action);
         }
     }
 }
